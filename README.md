@@ -49,8 +49,11 @@ Android >= 6.0 支付闪现，然后没有任何反应
 可能是支付授权目录错误
 
 如果支付页面是
-http://example.com/pay/index/ 
+
+http://example.com/pay/index/
+
 或 http://example.com/pay/index[.html, .aspx, .php, .xhtml, .jsp]等
+
 或 http://example.com/pay/index
 
 则支付授权目录配置如下，3条URL务必都加上
