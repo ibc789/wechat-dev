@@ -3,7 +3,7 @@
 
 angular ui-router
 
-1.分享失败，点击没有反应
+1. 分享失败，点击没有反应
 
 解决方案:
 
@@ -34,7 +34,7 @@ wx.config() 是 ok
 
 解决方案:
 
-非不得已不要加微信以外的方法微信wx.config();
+非不得已不要wx.config();
 
 4.微信支付
 
@@ -53,3 +53,15 @@ http://test.com/pay/
 http://test.com/pay/index/
 
 5.微信hideOptionMenu能不用则不用
+
+总结：
+
+WechatService.js
+
+``` js
+// 配置微信config
+WechatService.config(() => {
+	// 非不得已不要在内部添加与微信无关的方法
+	// 每个需要调用微信SDK的都得执行该方法（解决Android兼容性）
+});
+```
