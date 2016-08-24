@@ -70,9 +70,7 @@ http://example.com/pay/index/
 
 5.其他问题
 
-wx.hideOptionMenu();
-
-该方法能不用则不用
+wx.hideOptionMenu();该方法能不用则不用
 
 总结：
 
