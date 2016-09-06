@@ -6,12 +6,15 @@ angular ui-router
 进页面需获取当前页的URL，切换路由的时候，不能改变值
 
 千万不要使用$locationProvider.html5Mode(true);模式，
-微信支付授权目录就是个坑
-使用微信支付最好使用
+
+微信支付授权目录就是个坑，使用微信支付最好使用
+
 $locationProvider.hashPrefix('?');
-url格式
+
+将微信的应用的url设置成以下格式：
+
 ``` js
-http://localhost:8080/#?/
+http://wx.example.com/#?/
 ```
 
 1. 分享失败，点击没有反应
