@@ -5,6 +5,15 @@ angular ui-router
 
 进页面需获取当前页的URL，切换路由的时候，不能改变值
 
+千万不要使用$locationProvider.html5Mode(true);模式，
+微信支付授权目录就是个坑
+使用微信支付最好使用
+$locationProvider.hashPrefix('?');
+url格式
+``` js
+http://localhost:8080/#?/
+```
+
 1. 分享失败，点击没有反应
 
 解决方案:
@@ -38,39 +47,7 @@ wx.config() 是 ok
 
 非不得已不要在config promise后添加与微信无关的方法
 
-4.微信支付
-
-iOS 能正常支付
-
-Android <= 6.0 没有任何反应
-
-Android >= 6.0 支付闪现，然后没有任何反应
-
-解决方案:
-
-可能是支付授权目录错误
-
-如果支付页面是
-
-http://example.com/pay/index/
-
-或 http://example.com/pay/index
-
-或 http://example.com/pay/index.html
-
-或 http://example.com/pay/index.php
-
-...
-
-则支付授权目录配置如下，3条URL务必都加上
-
-http://example.com/
-
-http://example.com/pay/
-
-http://example.com/pay/index/
-
-5.其他问题
+4.其他问题
 
 wx.hideOptionMenu();该方法能不用则不用
 
